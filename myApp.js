@@ -7,8 +7,9 @@ app.get('/', (req, res) => {
     res.send('Hello Express');
 });
 
-
-
+app.get("/", function (request, response) {
+  response.sendFile(__dirname + '/views/index.html');
+});
 
 
 
