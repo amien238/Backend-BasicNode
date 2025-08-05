@@ -1,6 +1,10 @@
 require('dotenv').config();
+const bodyParse = require('body-parser');
 let express = require('express');
 let app = express();
+
+
+app.use(bodyParse.urlencoded({ extended: false }));
 
 app.get('/name', (req, res) => {
     const firstName = req.query.first;
