@@ -6,7 +6,7 @@ let app = express();
 
 app.use(bodyParse.urlencoded({ extended: false }));
 
-app.get('/name', (req, res) => {
+app.post('/name', (req, res) => {
     const firstName = req.query.first;
     const lastName = req.query.last;
     res.json({ name: `${firstName} ${lastName}` });
