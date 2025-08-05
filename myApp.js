@@ -7,6 +7,13 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get('/now', (req, res, next) => {
+    req.time = new Date().toString();
+    next();
+}, (req, res) => {
+    res.json({ time: req.time });
+});
+
 console.log('Hello World!');
 
 app.get('/', (req, res) => {
