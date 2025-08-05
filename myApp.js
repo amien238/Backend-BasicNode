@@ -2,6 +2,12 @@ require('dotenv').config();
 let express = require('express');
 let app = express();
 
+app.get('/name', (req, res) => {
+    const firstName = req.query.first;
+    const lastName = req.query.last;
+    res.json({ name: `${firstName} ${lastName}` });
+});
+
 app.use((req, res, next) => {
     console.log(`${req.method} ${req.path} - ${req.ip}`);
     next();
